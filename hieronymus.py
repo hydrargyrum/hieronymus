@@ -56,21 +56,11 @@ class CurtainViewer(object):
 		self.setMouseTracking(True)
 
 	def _rect(self, rect, image_index):
-		mv = -self.images[image_index].rect().center()
-		mv += self.rect().center()
-		
 		irect = QRectF(rect)
-		#~ irect.translate(-self.rect().center())
-		#~ irect.translate(self.centers[image_index])
-		#~ c = irect.center()
-		irect.translate(-mv)
-		#~ irect.setSize(irect.size() * self.zoom[image_index])
+		irect.translate(-self.rect().center())
 		irect.setTopLeft(irect.topLeft() * self.zoom[image_index])
 		irect.setBottomRight(irect.bottomRight() * self.zoom[image_index])
-		irect.translate(mv)
-		#~ irect.translate(-self.rect().center())
-		#~ irect.moveCenter(c)
-		#~ irect.translate(self.centers[image_index])
+		irect.translate(self.centers[image_index])
 		return irect
 
 	def paintEvent(self, ev):
