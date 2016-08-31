@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# this file is under the WTFPLv2 license, see COPYING.WTFPL
 
 from __future__ import division
 from __future__ import print_function
