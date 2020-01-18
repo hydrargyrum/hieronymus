@@ -1,22 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # this file is under the WTFPLv2 license, see COPYING.WTFPL
-
-from __future__ import division
-from __future__ import print_function
 
 import sys
 
-from PyQt5.QtCore import pyqtSlot as Slot
-from PyQt5.QtCore import QPointF
-from PyQt5.QtCore import QRectF
-from PyQt5.QtGui import QPainter
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QAction
-from PyQt5.QtWidgets import QActionGroup
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QToolBar
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtCore import (
+	pyqtSlot as Slot, QPointF, QRectF, QPainter, QPixmap,
+)
+from PyQt5.QtWidgets import (
+	QAction, QActionGroup, QApplication, QMainWindow, QToolBar, QWidget,
+)
 
 MODE_PANSCAN = 0
 MODE_CURTAIN = 1
@@ -30,6 +22,7 @@ MODE_GRID = 2
 # TODO option for tint images?
 # TODO grid for more than 2 images
 # TODO do a kind of diff?
+
 
 class MainWindow(QMainWindow):
 	def __init__(self, viewer=None, **kwargs):
@@ -244,7 +237,7 @@ if __name__ == '__main__':
 	files = app.arguments()
 	del files[0]  # first arg is executable
 	if not files:
-		print('missing filenames arguments', file=sys.stderr)
+		print('usage: hieronymus FILE1 FILE2', file=sys.stderr)
 		sys.exit(1)
 
 	for img in files:
