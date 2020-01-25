@@ -4,7 +4,10 @@
 import sys
 
 from PyQt5.QtCore import (
-	pyqtSlot as Slot, QPointF, QRectF, QPainter, QPixmap,
+	pyqtSlot as Slot, QPointF, QRectF,
+)
+from PyQt5.QtGui import (
+	QPainter, QPixmap,
 )
 from PyQt5.QtWidgets import (
 	QAction, QActionGroup, QApplication, QMainWindow, QToolBar, QWidget,
